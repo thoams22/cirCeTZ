@@ -1,5 +1,6 @@
 #import "/src/dependencies.typ": cetz
 #import "/src/labels.typ": draw-labels
+#import "/src/utils.typ"
 
 #let draw-poles(poles) = {
   if type(poles) != str {
@@ -173,7 +174,7 @@
       }
     }
     if name != none {
-      copy-anchors("component")
+      utils.copy-anchors("component")
     }
   })
   for p in pos {
