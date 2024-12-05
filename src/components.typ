@@ -8,3 +8,4 @@
 #import "/src/components/sources.typ": *
 #import "/src/components/terminal-shapes.typ": *
 #import "/src/components/transistors.typ": *
+#import "/src/components/inductor.typ": *

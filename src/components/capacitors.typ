@@ -20,7 +20,7 @@
 
     set-style(stroke: style.stroke)
     func(style)
-
+    
   },
   (
     (
