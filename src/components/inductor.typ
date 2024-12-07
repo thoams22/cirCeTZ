@@ -6,6 +6,8 @@
 #let inductor(..inputs) = component(
   "inductor",
   (style) => {
+    set-style(stroke: (thickness: style.stroke.thickness * style.thickness))
+
     let step = style.width / (style.coils * 2) 
     let height = style.height
     let x = style.width / 2

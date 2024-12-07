@@ -10,3 +10,4 @@
 #import "/src/components/transistors.typ": *
 #import "/src/components/inductor.typ": *
 #import "/src/components/transformers.typ": *
+#import "/src/components/diodes.typ": *

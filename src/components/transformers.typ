@@ -18,6 +18,11 @@
     let width4 = style.width / 4
     let width8 = style.width / 8
 
+    anchor("text", (
+      0,
+      height2
+    ))
+
     anchor("A1", (-width2, height2))  
     anchor("A2", (-width2, -height2))
   
@@ -39,7 +44,7 @@
     anchor("inner dot B1", (width8, height2 - height8))  
     anchor("inner dot B2", (width8, -height2 + height8))
 
-    let idot = inputs.named().at("inner dot", default: (:))
+    let idot = inputs.named().at("inner-dot", default: (:))
 
     for i in idot {
       assert(i in ("A1", "A2", "B1", "B2"),  message: "Dot must be A1 or A2 or B1 or B2")      
@@ -52,7 +57,7 @@
     anchor("outer dot B1", (width4 + width8, height2 - height8))  
     anchor("outer dot B2", (width4 + width8, -height2 + height8))
 
-    let odot = inputs.named().at("outer dot", default: (:))
+    let odot = inputs.named().at("outer-dot", default: (:))
 
     for i in odot {
       assert(i in ("A1", "A2", "B1", "B2"),  message: "Dot must be A1 or A2 or B1 or B2")      
