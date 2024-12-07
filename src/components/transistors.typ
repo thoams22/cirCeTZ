@@ -22,6 +22,7 @@
         0
       )
     )
+
     anchor("left", (-style.width, 0))
     anchor("right", (0,0))
     anchor("text", (0.05, 0))
@@ -118,6 +119,55 @@
   inputs
 )
 
+#let pnp(..inputs) = transistor(
+  "pnp",
+  style => {
+    let height = style.height/2
+    let base-x = style.base-width * -style.width
+    let base-y = style.base-height * height
+    let base-y-2 = style.base-height-2 * height
+
+    anchor("inner up", (0, base-y))
+    anchor("inner down", (0, -base-y))
+    anchor("arrows", (base-x + 0.6 * -style.width, height * 0.2))
+
+    line(
+      "C",
+      "inner up",
+    )
+
+    line(
+      (),
+      (base-x, base-y-2),
+      name: "arrow-line"
+    )
+
+    line(
+      (base-x, base-y),
+      (base-x, -base-y)
+    )
+
+    line(
+      (base-x, -base-y-2),
+      "inner down",
+      "E",
+    )
+
+    line("B", "nobase")
+  },
+  (
+    width: .6,
+    base-height: .45,
+    base-height-2: .15,
+    conn-height: 0,
+    height: 1.1,
+    base-width: .5,
+    arrow-pos: 50%,
+    curr-direction: 1
+  ),
+  inputs
+)
+
 #let nmos(..inputs) = transistor(
   "nmos",
   style => {
@@ -152,6 +202,118 @@
     width: 0.7,
     curr-direction: 1,
     mos-arrows: false,
+  ),
+  inputs
+)
+
+#let nigbt(..inputs) = transistor(
+  "nigbt",
+  style => {
+    let height = style.height/2
+    let base-x = style.base-width * -style.width
+    let base-y = style.base-height * height
+    let base-y-2 = style.base-height-2 * height
+
+    let gate-x = -style.width * style.gate-width
+    let gate-y = height * style.gate-height
+
+    anchor("inner up", (0, base-y))
+    anchor("inner down", (0, -base-y))
+    anchor("arrows", (base-x + 0.6 * -style.width, height * 0.2))
+
+    line(
+      "C",
+      "inner up",
+      (base-x, base-y-2)
+    )
+
+    line(
+      (base-x, base-y),
+      (base-x, -base-y)
+    )
+
+    line(
+      (base-x, -base-y-2),
+      "inner down",
+      name: "arrow-line"
+    )
+
+    line(
+      (),
+      "E",
+    )
+
+    line((gate-x, gate-y), (gate-x, -gate-y))
+
+    line((gate-x, 0), (-style.width, 0))
+  },
+  (
+    width: .6,
+    base-height: .45,
+    base-height-2: .15,
+    conn-height: 0,
+    gate-height: 0.45,
+    gate-width: 0.62,
+    height: 1.1,
+    base-width: .5,
+    arrow-pos: 50%,
+    curr-direction: 1
+  ),
+  inputs
+)
+
+#let pigbt(..inputs) = transistor(
+  "pigbt",
+  style => {
+    let height = style.height/2
+    let base-x = style.base-width * -style.width
+    let base-y = style.base-height * height
+    let base-y-2 = style.base-height-2 * height
+
+    let gate-x = -style.width * style.gate-width
+    let gate-y = height * style.gate-height
+
+    anchor("inner up", (0, base-y))
+    anchor("inner down", (0, -base-y))
+    anchor("arrows", (base-x + 0.6 * -style.width, height * 0.2))
+
+    line(
+      "C",
+      "inner up",
+    )
+
+    line(
+      (),
+      (base-x, base-y-2),
+      name: "arrow-line"
+    )
+
+    line(
+      (base-x, base-y),
+      (base-x, -base-y)
+    )
+
+    line(
+      (base-x, -base-y-2),
+      "inner down",
+      "E",
+    )
+
+    line((gate-x, gate-y), (gate-x, -gate-y))
+
+    line((gate-x, 0), (-style.width, 0))
+  },
+  (
+    width: .6,
+    base-height: .45,
+    base-height-2: .15,
+    conn-height: 0,
+    gate-height: 0.45,
+    gate-width: 0.62,
+    height: 1.1,
+    base-width: .5,
+    arrow-pos: 50%,
+    curr-direction: 1
   ),
   inputs
 )
