@@ -196,3 +196,114 @@
   ),
   inputs
 )
+
+#let thyristor(..inputs) = diodes(
+  "thyristor",
+  style => {
+    let height2 = style.height / 2
+
+    let width2 = style.width / 2
+    let width8 = style.width / 8
+
+    line((width2, -height2), (width2, height2))
+
+    set-style(stroke: (thickness: style.stroke.thickness))
+
+    merge-path({
+      line((width2, 0), (rel: (width2, height2)))
+      line((style.width, height2), (rel: (0, height2))) 
+    })
+    anchor("G", ())   
+  },
+  (
+    width: 0.4,
+    height: 0.4,
+
+  ),
+  inputs
+)
+
+#let put-thyristor(..inputs) = diodes(
+  "put",
+  style => {
+    let height2 = style.height / 2
+
+    let width2 = style.width / 2
+    let width8 = style.width / 8
+
+    line((width2, -height2), (width2, height2))
+
+    set-style(stroke: (thickness: style.stroke.thickness))
+
+
+    merge-path({
+      line((-width2, 0), (rel: (-width2, height2)))
+      line((-style.width, height2), (rel: (0, height2))) 
+    })
+    anchor("G", ())   
+  },
+  (
+    width: 0.4,
+    height: 0.4,
+
+  ),
+  inputs
+)
+
+#let gto-thyristor(..inputs) = diodes(
+  "gto",
+  style => {
+    let height2 = style.height / 2
+    let height4 = style.height / 4
+
+    let width2 = style.width / 2
+    let width8 = style.width / 8
+
+    line((width2, -height2), (width2, height2))
+
+    set-style(stroke: (thickness: style.stroke.thickness))
+
+    line((width2, height4), (rel: (width2, height2)))
+    
+    merge-path({
+      line((width2, 0), (rel: (width2, height2)))
+      line((style.width, height2), (rel: (0, height2))) 
+    })
+    anchor("G", ())   
+  },
+  (
+    width: 0.4,
+    height: 0.4,
+
+  ),
+  inputs
+)
+
+#let gto-bar-thyristor(..inputs) = diodes(
+  "gtob",
+  style => {
+    let height2 = style.height / 2
+    let height4 = style.height / 4
+
+    let width2 = style.width / 2
+    let width8 = style.width / 8
+
+    line((width2, -height2), (width2, height2))
+    
+    set-style(stroke: (thickness: style.stroke.thickness))
+
+    line((style.width - 3/2*width8, height2 + height4), (rel: (3*width8, 0)))
+    
+    merge-path({
+      line((width2, 0), (rel: (width2, height2)))
+      line((style.width, height2), (rel: (0, height2))) 
+    })
+    anchor("G", ())   
+  },
+  (
+    width: 0.4,
+    height: 0.4,
+
+  ),
+  inputs
+)
