@@ -11,4 +11,6 @@
   resistor((0, 4), (2, 4))
   capacitor((0, 6), (2, 6))
 
+  transformers(name: "tt", (0, 8), (3, 8))
+  inductor(("tt.B1"), ("tt.B2"))
 })

@@ -9,7 +9,6 @@
     let step = style.width / (style.coils * 2) 
     let height = style.height
     let x = style.width / 2
-    style.stroke.thickness *= style.thickness
 
     anchor("x", (-x, 0))
     arc(("x"), start: 180deg, delta: -180deg, radius: step)
